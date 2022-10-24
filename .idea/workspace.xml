@@ -5,16 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="73947a57-6a65-4e84-b6fe-862a98393aa5" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/project-board.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/project-board.main.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/project-board.test.iml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/jake/projectboard/domain/Article.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jake/projectboard/domain/Article.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/jake/projectboard/domain/ArticleComment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jake/projectboard/domain/ArticleComment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,6 +36,17 @@
               <path>
                 <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
                 <item name="project-board" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="project-board" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="build" type="c8890929:TasksNode$1" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="project-board" type="f1a62948:ProjectNode" />
                 <item name="Dependencies" type="6de06a37:ExternalSystemViewDefaultContributor$MyDependenciesNode" />
               </path>
               <path>
@@ -60,6 +65,11 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="com.haulmont.jpb.NewClass" />
+        <option value="com.haulmont.jpb.NewRecord" />
+        <option value="com.haulmont.jpb.JpaRepository" />
+        <option value="Interface" />
+        <option value="JUnit5 Test Class" />
       </list>
     </option>
   </component>
@@ -69,13 +79,15 @@
   <component name="JpbToolWindowState">
     <option name="myId2FirstActivated">
       <map>
+        <entry key="com.haulmont.jpb.jpaInspector" value="true" />
         <entry key="com.haulmont.jpb.jpaPalette" value="true" />
         <entry key="com.haulmont.jpb.jpaStructure" value="true" />
       </map>
     </option>
     <option name="myId2Visible">
       <map>
-        <entry key="com.haulmont.jpb.jpaPalette" value="true" />
+        <entry key="com.haulmont.jpb.jpaInspector" value="true" />
+        <entry key="com.haulmont.jpb.jpaPalette" value="false" />
         <entry key="com.haulmont.jpb.jpaStructure" value="true" />
       </map>
     </option>
@@ -91,14 +103,24 @@
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
+    &quot;DtoCreateDialog.USE_JAVA_RECORDS_INITIAL_PROP_KEY&quot;: &quot;true&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;editing.templates&quot;,
     &quot;spring.configuration.checksum&quot;: &quot;21a0b134ab803e0fda52b04658bb3d83&quot;
   },
   &quot;keyToStringList&quot;: {
@@ -107,8 +129,26 @@
     ]
   }
 }</component>
-  <component name="RunManager" selected="Gradle.JakeProjectBoardApplicationTests">
-    <configuration name="JakeProjectBoardApplicationTests" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+  <component name="RecentsManager">
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\epike\Documents\jakeboard\jake-project-board\src\main\resources" />
+    </key>
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="com.jake.projectboard.repository" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="configurationTypes">
+      <set>
+        <option value="SpringBootApplicationConfigurationType" />
+      </set>
+    </option>
+  </component>
+  <component name="RunManager" selected="Gradle.JpaRepositoryTest">
+    <configuration name="JpaRepositoryTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -121,7 +161,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;com.jake.projectboard.JakeProjectBoardApplicationTests&quot;" />
+            <option value="&quot;com.jake.projectboard.repository.JpaRepositoryTest&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -131,7 +171,7 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="JakeProjectBoardApplicationTests.contextLoads" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="JpaRepositoryTest.givenTestData_whenInserting_thenWorksFine" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -144,7 +184,53 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;com.jake.projectboard.JakeProjectBoardApplicationTests.contextLoads&quot;" />
+            <option value="&quot;com.jake.projectboard.repository.JpaRepositoryTest.givenTestData_whenInserting_thenWorksFine&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="JpaRepositoryTest.givenTestData_whenSelecting_thenWorksFine" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;com.jake.projectboard.repository.JpaRepositoryTest.givenTestData_whenSelecting_thenWorksFine&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="JpaRepositoryTest.givenTestData_whenUpdating_thenWorksFine" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;com.jake.projectboard.repository.JpaRepositoryTest.givenTestData_whenUpdating_thenWorksFine&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -176,6 +262,8 @@
       <method v="2" />
     </configuration>
     <configuration name="JakeProjectBoardApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <option name="ACTIVE_PROFILES" />
+      <option name="ENABLE_LAUNCH_OPTIMIZATION" value="false" />
       <module name="project-board.main" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.jake.projectboard.JakeProjectBoardApplication" />
       <method v="2">
@@ -184,9 +272,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.JakeProjectBoardApplicationTests" />
-        <item itemvalue="Gradle.JakeProjectBoardApplicationTests.contextLoads" />
+        <item itemvalue="Gradle.JpaRepositoryTest" />
         <item itemvalue="Gradle.jake-project-board [build]" />
+        <item itemvalue="Gradle.JpaRepositoryTest.givenTestData_whenUpdating_thenWorksFine" />
+        <item itemvalue="Gradle.JpaRepositoryTest.givenTestData_whenInserting_thenWorksFine" />
+        <item itemvalue="Gradle.JpaRepositoryTest.givenTestData_whenSelecting_thenWorksFine" />
       </list>
     </recent_temporary>
   </component>
@@ -199,7 +289,7 @@
       <option name="presentableId" value="Default" />
       <updated>1666336334127</updated>
       <workItem from="1666336336639" duration="2321000" />
-      <workItem from="1666572743633" duration="4900000" />
+      <workItem from="1666572743633" duration="17650000" />
     </task>
     <servers />
   </component>
@@ -216,5 +306,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>
