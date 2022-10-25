@@ -23,10 +23,10 @@ import java.util.Set;
         @Index(columnList = "hashtag"),
         @Index(columnList = "createdAt"),
         @Index(columnList = "createdBy"),
-})
-@EntityListeners(AuditingEntityListener.class)
+}) // index 는 불가
+//@EntityListeners(AuditingEntityListener.class)
 @Entity
-public class Article {
+public class Article extends AuditingFields {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY) // Auto Increment, MySQL은 Identity로 해야함
     private Long id;
@@ -43,10 +43,14 @@ public class Article {
     private final Set<ArticleComment> articleComments = new LinkedHashSet<>();
 
     // 자동으로 세팅, JPA Auditing
-    @CreatedDate @Column(nullable = false) private LocalDateTime createdAt; // 생성일자
-    @CreatedBy @Column(nullable = false, length = 100) private String createdBy; // 생성자
-    @LastModifiedDate @Column(nullable = false) private LocalDateTime modifiedAt; // 수정일시
-    @LastModifiedBy @Column(nullable = false, length = 100) private String modifiedBy; // 수정자
+//    @CreatedDate @Column(nullable = false) private LocalDateTime createdAt; // 생성일자
+//    @CreatedBy @Column(nullable = false, length = 100) private String createdBy; // 생성자
+//    @LastModifiedDate @Column(nullable = false) private LocalDateTime modifiedAt; // 수정일시
+//    @LastModifiedBy @Column(nullable = false, length = 100) private String modifiedBy; // 수정자
+
+    // 공통 추출 MappedSuperClass - 상속 또는 Embedded - 필드로 추가
+//    @Embedded AAA aa; // - 공통필드로 치환됨
+//    class AAA { }
 
     protected Article() {} // 하이버 네이트 구현체는 기본 생성자를 가지고 있어야함, protected까지 열 수 있음
 
