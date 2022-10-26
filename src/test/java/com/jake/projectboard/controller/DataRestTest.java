@@ -1,5 +1,6 @@
 package com.jake.projectboard.controller;
 
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,10 +18,11 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 // 상대적으로 무거운 테스트
 //@WebMvcTest // controller 외에 bean 들을 load하지 않음 DataRestTest의 config를 불러오지 않음
+@Disabled("Spring Data REST 통합테스트는 불필요하므로 제외시킴")
 @DisplayName("Data REST - API 테스트")
 @Transactional // repository까지 실행시켜 쿼리가 나오면 DB에 영향 -> Test 기본동작을 rollback 시켜줌
 @AutoConfigureMockMvc
-@SpringBootTest
+@SpringBootTest // spring bean을 모두 불러옴
 public class DataRestTest {
     private final MockMvc mvc;
 
