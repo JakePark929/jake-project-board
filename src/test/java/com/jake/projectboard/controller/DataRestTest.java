@@ -24,6 +24,9 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @AutoConfigureMockMvc
 @SpringBootTest // spring bean을 모두 불러옴
 public class DataRestTest {
+    // 인테그레이션 테스트를 mocking하여 흐름을 끊을 수 있음
+    // article, comment까지으 흐름
+    // but, data rest를 억지로 끊으면 테스트가 제대로 동작안함 
     private final MockMvc mvc;
 
     public DataRestTest(@Autowired MockMvc mvc) {
