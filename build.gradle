@@ -32,6 +32,7 @@ dependencies {
     compileOnly 'org.projectlombok:lombok'
     developmentOnly 'org.springframework.boot:spring-boot-devtools' // 각종 dependency 캐시 온오프, 타임리프 웹캐시를 오프해줌, live reload
     annotationProcessor 'org.projectlombok:lombok'
+    annotationProcessor 'org.springframework.boot:spring-boot-configuration-processor' // 사용자의 어플리케이션도 사용할 수 있게 해줌
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
 
     // queryDSL 설정
