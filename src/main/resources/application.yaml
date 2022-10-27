@@ -29,6 +29,7 @@ spring:
   data.rest:
     base-path: /api
     detection-strategy: annotated
+  thymeleaf3.decoupled-logic: true # add to make clean html with thymeleaf3
   # thymeleaf.cache: false
 #  data.rest:
 #    base-path: /api
