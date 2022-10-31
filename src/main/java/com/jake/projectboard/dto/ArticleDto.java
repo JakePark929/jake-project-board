@@ -1,19 +1,58 @@
 package com.jake.projectboard.dto;
 
+import com.jake.projectboard.domain.Article;
+
 import java.time.LocalDateTime;
 
 /**
  * A DTO for the {@link com.jake.projectboard.domain.Article} entity
  */
 public record ArticleDto(
-        LocalDateTime createdAt,
-        String createdBy,
+        Long id,
+        UserAccountDto userAccountDto,
         String title,
         String content,
-        String hashtag
+        String hashtag,
+        LocalDateTime createdAt,
+        String createdBy,
+        LocalDateTime modifiedAt,
+        String modifiedBy
 //) implements Serializable { // 잭슨 프레임워크로 직렬화 하므로 필요없음
 ) {
-    public static ArticleDto of(LocalDateTime createdAt, String createdBy, String title, String content, String hashtag) {
-        return new ArticleDto(createdAt, createdBy, title, content, hashtag); // ctrl + space : suggestion
+    public static ArticleDto of(Long id,
+                                UserAccountDto userAccountDto,
+                                String title,
+                                String content,
+                                String hashtag,
+                                LocalDateTime createdAt,
+                                String createdBy,
+                                LocalDateTime modifiedAt,
+                                String modifiedBy) {
+        return new ArticleDto(id, userAccountDto, title, content, hashtag, createdAt, createdBy, modifiedAt, modifiedBy);
+    }
+    
+    // article은 entity를 몰라도 됨..
+    // Mapping 을 해줌
+    public static ArticleDto from(Article entity) {
+        return new ArticleDto(
+                entity.getId(),
+                UserAccountDto.from(entity.getUserAccount()),
+                entity.getTitle(),
+                entity.getContent(),
+                entity.getHashtag(),
+                entity.getCreatedAt(),
+                entity.getCreatedBy(),
+                entity.getModifiedAt(),
+                entity.getModifiedBy()
+        );
+    }
+
+    public Article toEntity() {
+        return Article.of(
+                userAccountDto.toEntity(),
+                title,
+                content,
+                hashtag
+        );
     }
 }
