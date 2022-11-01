@@ -15,6 +15,8 @@ import org.springframework.security.web.SecurityFilterChain;
 public class SecurityConfig {
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
+//        WebSecurityConfigurerAdapter 없어짐!
+
         return http
 //                .authorizeRequests().antMatchers("/**").permitAll()
                 .authorizeHttpRequests(auth -> auth.anyRequest().permitAll()) // 전체 들어갈 수 있게 허용
