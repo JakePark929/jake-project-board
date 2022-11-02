@@ -17,7 +17,7 @@ public record ArticleWithCommentsResponse(
         String email,
         String nickname,
         Set<ArticleCommentResponse> articleCommentsResponse
-) implements Serializable {
+) {
     public static ArticleWithCommentsResponse of(Long id,
                                                  String title,
                                                  String content,
