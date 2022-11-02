@@ -101,7 +101,7 @@ class ArticleCommentServiceTest {
         given(articleCommentRepository.getReferenceById(dto.id())).willReturn(articleComment);
 
         // When
-        sut.saveArticleComment(dto);
+        sut.updateArticleComment(dto);
 
         // Then
         assertThat(articleComment.getContent())
