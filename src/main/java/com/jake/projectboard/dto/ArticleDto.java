@@ -1,6 +1,7 @@
 package com.jake.projectboard.dto;
 
 import com.jake.projectboard.domain.Article;
+import com.jake.projectboard.domain.UserAccount;
 
 import java.time.LocalDateTime;
 
@@ -19,6 +20,12 @@ public record ArticleDto(
         String modifiedBy
 //) implements Serializable { // 잭슨 프레임워크로 직렬화 하므로 필요없음
 ) {
+    public static ArticleDto of(UserAccountDto userAccountDto,
+                                String title,
+                                String content,
+                                String hashtag) {
+        return new ArticleDto(null, userAccountDto, title, content, hashtag, null, null, null, null);
+    }
     public static ArticleDto of(Long id,
                                 UserAccountDto userAccountDto,
                                 String title,
@@ -47,9 +54,11 @@ public record ArticleDto(
         );
     }
 
-    public Article toEntity() {
+//    public Article toEntity() {
+    public Article toEntity(UserAccount userAccount) {
         return Article.of(
-                userAccountDto.toEntity(),
+//                userAccountDto.toEntity(),
+                userAccount,
                 title,
                 content,
                 hashtag
