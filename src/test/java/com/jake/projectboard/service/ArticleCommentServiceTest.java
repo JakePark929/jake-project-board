@@ -8,6 +8,7 @@ import com.jake.projectboard.dto.ArticleDto;
 import com.jake.projectboard.dto.UserAccountDto;
 import com.jake.projectboard.repository.ArticleCommentRepository;
 import com.jake.projectboard.repository.ArticleRepository;
+import com.jake.projectboard.repository.UserAccountRepository;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -31,6 +32,8 @@ class ArticleCommentServiceTest {
 
     @Mock private ArticleCommentRepository articleCommentRepository;
     @Mock private ArticleRepository articleRepository;
+    // mock은 생성자 주입기능이 지원됬으나 injectmock이 빠짐
+    @Mock private UserAccountRepository userAccountRepository;
 
     @DisplayName("게시글 ID로 조회하면, 댓글 리스트를 반환한다.")
     @Test
@@ -64,6 +67,7 @@ class ArticleCommentServiceTest {
         ArticleCommentDto dto = createArticleCommentDto("댓글");
 //        given(articleCommentRepository.save(any(ArticleComment.class))).willReturn(null);
         given(articleRepository.getReferenceById(dto.articleId())).willReturn(createArticle());
+        given(userAccountRepository.getReferenceById(dto.userAccountDto().userId())).willReturn(createUserAccount());
 
         // When
 //        sut.saveArticleComment(ArticleCommentDto.of(LocalDateTime.now(),"Jake",LocalDateTime.now(),"Jake","comment"));
@@ -71,6 +75,7 @@ class ArticleCommentServiceTest {
 
         // Then
         then(articleRepository).should().getReferenceById(dto.articleId());
+        then(userAccountRepository).should().getReferenceById(dto.userAccountDto().userId());
         then(articleCommentRepository).should().save(any(ArticleComment.class));
     }
 
@@ -86,6 +91,7 @@ class ArticleCommentServiceTest {
 
         // Then
         then(articleRepository).should().getReferenceById(dto.articleId());
+        then(userAccountRepository).shouldHaveNoInteractions();
         then(articleCommentRepository).shouldHaveNoInteractions();
     }
 
