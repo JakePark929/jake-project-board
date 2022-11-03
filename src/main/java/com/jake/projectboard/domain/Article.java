@@ -25,7 +25,7 @@ public class Article extends AuditingFields {
     private Long id;
 
     // 일부만 Setter로 지정, 임의로 내용을 수정할 수 없게끔..
-    @Setter @ManyToOne(optional = false) private UserAccount userAccount; // 유저 정보 (ID)
+    @Setter @ManyToOne(optional = false) @JoinColumn(name = "userId") private UserAccount userAccount; // 유저 정보 (ID)
 
     @Setter @Column(nullable = false) private String title; // 제목
     @Setter @Column(nullable = false, length = 10000) private String content; // 본문
