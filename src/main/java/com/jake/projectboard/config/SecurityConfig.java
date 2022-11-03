@@ -22,6 +22,7 @@ public class SecurityConfig {
                 .authorizeHttpRequests(auth -> auth.anyRequest().permitAll()) // 전체 들어갈 수 있게 허용
 //                .formLogin();
                 .formLogin().and()
+//                .csrf().disable() 가볍게 테스트용일 때는 시큐리티 기능을 생략해서 개발
                 .build();
 //        return http.build();
     }

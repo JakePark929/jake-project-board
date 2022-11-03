@@ -241,7 +241,7 @@ class ArticleControllerTest {
                         post("/articles/form")
                                 .contentType(MediaType.APPLICATION_FORM_URLENCODED)
                                 .content(formDataEncoder.encode(articleRequest))
-                                .with(csrf())
+                                .with(csrf()) // 검사가 적용이 되어 있어야 함
                 )
                 .andExpect(status().is3xxRedirection())
                 .andExpect(view().name("redirect:/articles"))
