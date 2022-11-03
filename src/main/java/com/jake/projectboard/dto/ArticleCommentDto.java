@@ -2,8 +2,8 @@ package com.jake.projectboard.dto;
 
 import com.jake.projectboard.domain.Article;
 import com.jake.projectboard.domain.ArticleComment;
+import com.jake.projectboard.domain.UserAccount;
 
-import java.io.Serializable;
 import java.time.LocalDateTime;
 
 /**
@@ -19,6 +19,13 @@ public record ArticleCommentDto(
         LocalDateTime modifiedAt,
         String modifiedBy
 ) {
+    // new 로 만드는데 영속화 되지 않은 객체를 entity에 만들어 넣기 전까지 null로 만들어 넣는 메소드
+    public static ArticleCommentDto of(Long articleId,
+                                       UserAccountDto userAccountDto,
+                                       String content) {
+        return new ArticleCommentDto(null, articleId, userAccountDto, content, null, null, null, null);
+    }
+
     public static ArticleCommentDto of(Long id,
                              Long articleId,
                              UserAccountDto userAccountDto,
@@ -43,10 +50,11 @@ public record ArticleCommentDto(
         );
     }
 
-    public ArticleComment toEntity(Article entity) {
+    public ArticleComment toEntity(Article article, UserAccount userAccount) {
         return ArticleComment.of(
-                entity,
-                userAccountDto.toEntity(),
+                article,
+//                userAccountDto.toEntity(),
+                userAccount,
                 content
         );
     }
