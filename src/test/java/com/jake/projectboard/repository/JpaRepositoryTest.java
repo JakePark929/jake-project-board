@@ -7,16 +7,24 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.boot.test.context.TestConfiguration;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Import;
+import org.springframework.data.domain.AuditorAware;
+import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
+import java.util.Optional;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
 //@ActiveProfiles("testdb") // test용으로 db옵션 실행
 //@AutoConfigureTestDatabase(replace = AutoConfigureTestDatabase.Replace.NONE)
 @DisplayName("JPA 연결 테스트") // Junit5 기능
-@Import(JpaConfig.class) // JpaConfig 옵션 Auditing이 자동으로 안 켜짐
+// @Import(JpaConfig.class) // JpaConfig 옵션 Auditing이 자동으로 안 켜짐
+@Import(JpaRepositoryTest.TestJpaConfig.class) // JpaConfig 옵션 Auditing이 자동으로 안 켜짐
 @DataJpaTest
 class JpaRepositoryTest {
     private final ArticleRepository articleRepository; // Autowired 필드 주입을 할 수 있지만, Junit5, Boot에서 Test에서도 사용가능(Junit4는 runwith)
@@ -96,5 +104,15 @@ class JpaRepositoryTest {
         // Then
         assertThat(articleRepository.count()).isEqualTo(previousArticleCount-1);
         assertThat(articleCommentRepository.count()).isEqualTo(previousArticleCommentCount - deletedCommentsSize);
+    }
+
+    @EnableJpaAuditing
+    @TestConfiguration
+    public static class TestJpaConfig {
+        // security 는 auditor 무시
+        @Bean
+        public AuditorAware<String> auditorAware() {
+           return () -> Optional.of("jake");
+        }
     }
 }
