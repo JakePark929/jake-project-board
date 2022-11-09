@@ -31,7 +31,7 @@ Spring Boot
 * Heroku
 
 ## 데모 페이지
-{ 작성 중 }
+https://project-board-jake.herokuapp.com/
 
 ## 질문, 건의
 프로젝트에 관해 궁금하신 점이나 건의 사항이 있으시다면 아래 항목을 이용해 주세요.

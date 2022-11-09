@@ -1,6 +1,7 @@
 package com.jake.projectboard.controller;
 
 import com.jake.projectboard.config.SecurityConfig;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,15 +26,16 @@ public class AuthControllerTest {
         this.mvc = mvc;
     }
 
-    @DisplayName("[view] [GET] 로그인 페이지 - 정상 호출")
-    @Test
-    public void givenNothing_whenTryingToLogInView_thenReturnsLogInView() throws Exception {
-        // Given
-
-        // When & Then
-        mvc.perform(get("/login"))
-                .andExpect(status().isOk())
-                .andExpect(content().contentTypeCompatibleWith(MediaType.TEXT_HTML))
-                .andDo(MockMvcResultHandlers.print());
-    }
+//    @Disabled
+//    @DisplayName("[view] [GET] 로그인 페이지 - 정상 호출")
+//    @Test
+//    public void givenNothing_whenTryingToLogInView_thenReturnsLogInView() throws Exception {
+//        // Given
+//
+//        // When & Then
+//        mvc.perform(get("/login"))
+//                .andExpect(status().isOk())
+//                .andExpect(content().contentTypeCompatibleWith(MediaType.TEXT_HTML))
+//                .andDo(MockMvcResultHandlers.print());
+//    }
 }

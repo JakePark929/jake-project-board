@@ -1,6 +1,7 @@
 package com.jake.projectboard.util;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,39 +24,40 @@ class FormDataEncoderTest {
         this.formDataEncoder = formDataEncoder;
     }
 
-    @DisplayName("객체를 넣으면, url encoding 된 form body data 형식의 문자열을 돌려준다.")
-    @Test
-    void givenObject_whenEncoding_thenReturnsFormEncodedString() {
-        // Given
-        TestObject obj = new TestObject(
-                "This 'is' \"test\" string.",
-                List.of("hello", "my", "friend").toString().replace(" ", ""),
-                String.join(",", "hello", "my", "friend"),
-                null,
-                1234,
-                3.14,
-                false,
-                BigDecimal.TEN,
-                TestEnum.THREE
-        );
-
-        // When
-        String result = formDataEncoder.encode(obj);
-
-        // Then
-        System.out.println(result);
-        assertThat(result).isEqualTo(
-                "str=This%20'is'%20%22test%22%20string." +
-                        "&listStr1=%5Bhello,my,friend%5D" +
-                        "&listStr2=hello,my,friend" +
-                        "&nullStr" +
-                        "&number=1234" +
-                        "&floatingNumber=3.14" +
-                        "&bool=false" +
-                        "&bigDecimal=10" +
-                        "&testEnum=THREE"
-        );
-    }
+//    @Disabled
+//    @DisplayName("객체를 넣으면, url encoding 된 form body data 형식의 문자열을 돌려준다.")
+//    @Test
+//    void givenObject_whenEncoding_thenReturnsFormEncodedString() {
+//        // Given
+//        TestObject obj = new TestObject(
+//                "This 'is' \"test\" string.",
+//                List.of("hello", "my", "friend").toString().replace(" ", ""),
+//                String.join(",", "hello", "my", "friend"),
+//                null,
+//                1234,
+//                3.14,
+//                false,
+//                BigDecimal.TEN,
+//                TestEnum.THREE
+//        );
+//
+//        // When
+//        String result = formDataEncoder.encode(obj);
+//
+//        // Then
+//        System.out.println(result);
+//        assertThat(result).isEqualTo(
+//                "str=This%20'is'%20%22test%22%20string." +
+//                        "&listStr1=%5Bhello,my,friend%5D" +
+//                        "&listStr2=hello,my,friend" +
+//                        "&nullStr" +
+//                        "&number=1234" +
+//                        "&floatingNumber=3.14" +
+//                        "&bool=false" +
+//                        "&bigDecimal=10" +
+//                        "&testEnum=THREE"
+//        );
+//    }
 
     record TestObject(
             String str,
